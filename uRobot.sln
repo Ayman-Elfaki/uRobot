@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uRobot", "uRobot\uRobot.csproj", "{2E8BA34E-F521-424B-807F-4564DFDAC5B4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uRobot.Arduino", "uRobot.Arduino\uRobot.Arduino.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|ARM.ActiveCfg = Debug|ARM
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|ARM.Build.0 = Debug|ARM
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|ARM.Deploy.0 = Debug|ARM
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|ARM64.Build.0 = Debug|ARM64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|x64.ActiveCfg = Debug|x64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|x64.Build.0 = Debug|x64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|x64.Deploy.0 = Debug|x64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|x86.ActiveCfg = Debug|x86
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|x86.Build.0 = Debug|x86
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Debug|x86.Deploy.0 = Debug|x86
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|ARM.ActiveCfg = Release|ARM
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|ARM.Build.0 = Release|ARM
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|ARM.Deploy.0 = Release|ARM
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|ARM64.ActiveCfg = Release|ARM64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|ARM64.Build.0 = Release|ARM64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|ARM64.Deploy.0 = Release|ARM64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|x64.ActiveCfg = Release|x64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|x64.Build.0 = Release|x64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|x64.Deploy.0 = Release|x64
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|x86.ActiveCfg = Release|x86
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|x86.Build.0 = Release|x86
+		{2E8BA34E-F521-424B-807F-4564DFDAC5B4}.Release|x86.Deploy.0 = Release|x86
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|ARM.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x64.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|ARM.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|ARM64.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x64.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AEFC1EE-D548-44CD-9337-7CCFCC0EC3B7}
+	EndGlobalSection
+EndGlobal

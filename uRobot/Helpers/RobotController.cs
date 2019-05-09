@@ -63,6 +63,13 @@ namespace uRobot.Helpers
             }
         }
 
+        public async Task<IEnumerable<DeviceInformation>> FindAllDevices()
+        {
+            var devices = await DeviceInformation.FindAllAsync(RfcommDeviceService.GetDeviceSelector(RfcommServiceId.SerialPort));
+
+            return devices.ToArray();
+        }
+
 
         public async Task DisconnectAsync()
         {

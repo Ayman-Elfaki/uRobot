@@ -8,10 +8,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Margin="10, 10, 10, 10">
+    <RelativePanel Margin="10, 10, 10, 10">
         <!--Used to display a preview of the video stream from the camera-->
-        <CaptureElement x:Name="VideoPreview" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+        <StackPanel x:Name="panel" Orientation="Horizontal" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="10">
+            <ComboBox x:Name="tbDevice" Margin="5" Header="Device" Width="300" Tapped="TbDevice_Tapped" />
+            <Button x:Name="btnConnect" Click="BtnConnect_Click" Content="Connect" Margin="5" VerticalAlignment="Bottom"/>
+        </StackPanel>
+        <CaptureElement x:Name="VideoPreview" RelativePanel.Below="panel"/>
+        <StackPanel Orientation="Horizontal" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
             <StackPanel.Resources>
                 <Style TargetType="TextBlock">
                     <Setter Property="Foreground" Value="White"/>
@@ -21,11 +25,9 @@
             </StackPanel.Resources>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <!--displays the score from the model-->
-                <TextBox x:Name="tbDevice" Margin="5" Header="Device" Width="100" />
-                <Button x:Name="btnConnect" Click="BtnConnect_Click" Content="Connect" Margin="5" VerticalAlignment="Bottom"/>
                 <TextBlock Text="Score - " VerticalAlignment="Bottom" Margin="5"><Run  Text="{x:Bind Score,Mode=OneWay}"/></TextBlock>
                 <TextBlock x:Name="StatusBlock" TextWrapping="Wrap" Margin="5"/>
             </StackPanel>
         </StackPanel>
-    </Grid>
+    </RelativePanel>
 </Page>

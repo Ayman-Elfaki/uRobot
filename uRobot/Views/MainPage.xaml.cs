@@ -43,6 +43,7 @@ namespace uRobot.Views
         RobotController _robotController = new RobotController();
         bool isConnceted = false;
 
+        ONNXModelOutput _output = new ONNXModelOutput();
         // Model
         private ONNXModel model = null;
         // File name of the ONNX model. This must be in the Assets folder for the project
@@ -140,14 +141,9 @@ namespace uRobot.Views
                             ONNXModelInput input = new ONNXModelInput();
                             input.data = videoFrame;
                             // Evaluate the input data
-                            var evalOutput = await model.EvaluateAsync(input);
+                            _output = await model.EvaluateAsync(input);
                             // Do something with the model output
-                            await this.ProcessOutputAsync(evalOutput);
-
-                            if (isConnceted)
-                            {
-                                await MoveRobot(evalOutput);
-                            }
+                            await this.ProcessOutputAsync(_output);
                         }
                     }
                 }
@@ -304,13 +300,24 @@ namespace uRobot.Views
             }
         }
 
+        DispatcherTimer _dispatcherTimer;
         public MainPage()
         {
             this.InitializeComponent();
-
+            _dispatcherTimer = new DispatcherTimer();
+            _dispatcherTimer.Interval = TimeSpan.FromSeconds(5);
+            _dispatcherTimer.Tick += _dispatcherTimer_Tick;
             // Event handlers
             Application.Current.Suspending += ApplicationSuspending;
             this.Loaded += OnLoaded;
+        }
+
+        private async void _dispatcherTimer_Tick(object sender, object e)
+        {
+            if (isConnceted)
+            {
+                await MoveRobot(_output);
+            }
         }
 
         private async Task MoveRobot(ONNXModelOutput output)
@@ -333,11 +340,13 @@ namespace uRobot.Views
 
         private async void BtnConnect_Click(object sender, RoutedEventArgs e)
         {
+            var deviceName = tbDevice.SelectedValue as string;
             if (!isConnceted)
             {
                 btnConnect.Content = "Disconnect";
                 tbDevice.IsEnabled = false;
-                await _robotController.ConnectAsync(tbDevice.Text);
+                await _robotController.ConnectAsync(deviceName);
+                _dispatcherTimer.Start();
                 isConnceted = true;
             }
             else
@@ -345,8 +354,17 @@ namespace uRobot.Views
                 isConnceted = false;
                 btnConnect.Content = "Connect";
                 tbDevice.IsEnabled = true;
+
                 await _robotController.DisconnectAsync();
+                _dispatcherTimer.Stop();
             }
+        }
+
+        private async void TbDevice_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var devices = await _robotController.FindAllDevices();
+
+            tbDevice.ItemsSource = devices.Select(d => d.Name).ToList();
         }
     }
 }

@@ -3,7 +3,7 @@
 int M1_F = 3;
 int M1_B = 5;
 int M2_F = 6;
-int M2_B = 7;
+int M2_B = 9;
 
 
 void setup() {
@@ -47,25 +47,25 @@ void loop() {
 	}
 }
 
-void moveForward()
-{
-	analogWrite(M1_F, 150);
-	analogWrite(M1_B, 0);
-	analogWrite(M2_F, 150);
-	analogWrite(M2_B, 0);
-}
-
-
-void moveBackward()
-{
-	analogWrite(M1_F, 150);
-	analogWrite(M1_B, 0);
-	analogWrite(M2_F, 150);
-	analogWrite(M2_B, 0);
-}
-
-
 void moveRight()
+{
+	analogWrite(M1_F, 150);
+	analogWrite(M1_B, 0);
+	analogWrite(M2_F, 150);
+	analogWrite(M2_B, 0);
+}
+
+
+void moveLeft()
+{
+	analogWrite(M1_F, 0);
+	analogWrite(M1_B, 150);
+	analogWrite(M2_F, 0);
+	analogWrite(M2_B, 150);
+}
+
+
+void moveForward()
 {
 	analogWrite(M1_F, 0);
 	analogWrite(M1_B, 150);
@@ -74,7 +74,7 @@ void moveRight()
 }
 
 
-void moveLeft()
+void moveBackward()
 {
 	analogWrite(M1_F, 150);
 	analogWrite(M1_B, 0);
